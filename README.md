@@ -37,7 +37,7 @@ Our wrapper intercepts Anemoi's `flash_attn` import and routes it to SDPA.
 **Requirements:** Python ≥3.11, <3.13
 
 ```bash
-git clone https://github.com/EmmaScharfmann/AIFS-tutorial
+git clone https://github.com/huggingface/AIFS-single-2.0-on-all-GPUs
 cd aifs-tutorial
 pip install -r requirements.txt
 ```
@@ -253,7 +253,7 @@ hf jobs run \
   --flavor t4-small \
   --secrets HF_TOKEN=$HF_TOKEN \
   pytorch/pytorch:2.6.0-cuda12.4-cudnn9-devel \
-  bash -c "python -c \"import urllib.request; urllib.request.urlretrieve('https://github.com/EmmaScharfmann/AIFS-tutorial/archive/refs/heads/main.tar.gz', 'repo.tar.gz')\" && \
+  bash -c "python -c \"import urllib.request; urllib.request.urlretrieve('https://github.com/huggingface/AIFS-single-2.0-on-all-GPUs/archive/refs/heads/main.tar.gz', 'repo.tar.gz')\" && \
            tar xzf repo.tar.gz && mv AIFS-tutorial-main /app && cd /app && \
            pip install -r requirements.txt huggingface_hub && \
            python run_forecast.py --lead-time 48 --no-plots --dataset-repo your-hf-username/aifs-results"
